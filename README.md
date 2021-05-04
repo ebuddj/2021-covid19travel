@@ -3,7 +3,7 @@
 ## Travel restrictions due Covid-19 (EBU)
 
 **Sources**
-* [ReOpen Europe](https://reopen.europa.eu)
+* [Re-open Europe](https://reopen.europa.eu)
 
 **EBU links**
 * 
