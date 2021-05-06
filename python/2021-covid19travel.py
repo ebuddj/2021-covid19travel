@@ -42,17 +42,17 @@ import sys
 import os
 if (len(sys.argv) > 1 and sys.argv[1] == 'true'):
   print('\033[1mDownloading latest data\033[0m\n')
-  os.system('rm ./../data/changelog.csv*')
+  os.system('rm ./data/changelog.csv*')
   os.system('wget https://reopen.europa.eu/static/changelog.csv --directory-prefix=./data/')
 else:
   print('\033[1mUsing existing data\033[0m\n')
 
 try:
-  df = pd.read_csv('./../data/changelog.csv')
+  df = pd.read_csv('./data/changelog.csv')
 except:
   print('Existing data not found, downloading latest data\n')
   os.system('wget https://reopen.europa.eu/static/changelog.csv --directory-prefix=./data/')
-  df = pd.read_csv('./../data/changelog.csv')
+  df = pd.read_csv('./data/changelog.csv')
 
 # https://www.kite.com/python/answers/how-to-find-the-max-value-of-a-pandas-dataframe-column-in-python
 print('Latest data update is from ' + df['LastUpdate'].max() + '\n')
@@ -74,7 +74,7 @@ for country in df['Country'].unique():
     if df_temp_2.empty == False:
       data = data.append(df_temp_2, ignore_index=True)
 
-data.to_excel('data/output.xlsx', engine='xlsxwriter')
-data.to_csv('data/output.csv')
+data.to_excel('output.xlsx', engine='xlsxwriter')
+data.to_csv('output.csv')
 print('\033[1mDone! Results in output.xlsx and output.csv\033[0m')
 
