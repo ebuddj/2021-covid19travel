@@ -1,9 +1,10 @@
 {
   "name": "2021-covid19travel",
   "version": "1.0.0",
-  "description": "## Travel restrictions due Covid-19 (EBU)",
+  "description": "",
   "main": "index.js",
   "scripts": {
+    "update-data": "cd python && python 2021-covid19travel.py",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
