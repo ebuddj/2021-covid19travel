@@ -43,7 +43,7 @@ import os
 if (len(sys.argv) > 1 and sys.argv[1] == 'true'):
   print('\033[1mDownloading latest data\033[0m\n')
   os.system('rm ./../data/changelog.csv*')
-  os.system('wget https://reopen.europa.eu/static/changelog.csv --directory-prefix=./data/')
+  os.system('wget https://reopen.europa.eu/static/changelog.csv --directory-prefix=./../data/')
 else:
   print('\033[1mUsing existing data\033[0m\n')
 
@@ -51,7 +51,7 @@ try:
   df = pd.read_csv('./../data/changelog.csv')
 except:
   print('Existing data not found, downloading latest data\n')
-  os.system('wget https://reopen.europa.eu/static/changelog.csv --directory-prefix=./data/')
+  os.system('wget https://reopen.europa.eu/static/changelog.csv --directory-prefix=./../data/')
   df = pd.read_csv('./../data/changelog.csv')
 
 # https://www.kite.com/python/answers/how-to-find-the-max-value-of-a-pandas-dataframe-column-in-python
@@ -62,7 +62,10 @@ questions = ['From within the EU/EEA, may I enter or exit this country for touri
 'May I enter this country by road?',
 'Are there any risk areas under lockdown in this country?',
 'May I enter this country without being subject to a mandatory quarantine?',
-'Restrictions on the provision of tourist services at national or sub-national/regional level']
+'Restrictions on the provision of tourist services at national or sub-national/regional level',
+'National website with coronavirus related information for TOURISM',
+'National website with COVID-related inofrmation for TRANSPORT',
+'National website about COVID situation']
 
 data = pd.DataFrame(columns=df.columns)
 
